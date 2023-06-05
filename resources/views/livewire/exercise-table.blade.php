@@ -81,7 +81,7 @@
                             <td>{{ $exercise->title }}</td>
                             <td>{{ $exercise->place == 1 ? 'Gym' : 'Home' }}</td>
                             <td>{{ $exercise->equipment->title }}</td>
-                            <td>{{ $exercise->level->title }}</td>
+                            <td>{{ $exercise->level ? $exercise->level->title : '' }}</td>
                             <td>{{ $exercise->muscle->title }}</td>
 
                             <td>
