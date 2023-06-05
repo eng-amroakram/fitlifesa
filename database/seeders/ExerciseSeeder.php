@@ -106,6 +106,11 @@ class ExerciseSeeder extends Seeder
             $image_name = "images/$id.png";
             $image_file = public_path($image_name);
 
+            if (!file_exists($image_file)) {
+                $image_name = "images/$id.PNG";
+                $image_file = public_path($image_name);
+            }
+
             //Videos
             $video_name = "videos/$id.mp4";
             $video_file = public_path($video_name);
@@ -118,7 +123,6 @@ class ExerciseSeeder extends Seeder
                 $image = request()->file('image');
                 $video = request()->file('video');
             }
-
 
             if (file_exists($image_file)) {
 
