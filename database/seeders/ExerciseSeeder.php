@@ -18,6 +18,10 @@ class ExerciseSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('exercises')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         $bodyPart = BodyPart::get();
         $places = ["GYM" => 1, "Home" => 2];
 
