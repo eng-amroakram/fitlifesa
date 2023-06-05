@@ -87,7 +87,7 @@ class ExerciseSeeder extends Seeder
                     'id'                  => $id,
                     'equipment_id'        => $equipments[$equipments_config[$id]], #
                     'level_id'            => 1, #
-                    'exercise_category'   => "??",
+                    'exercise_category'   => 2,
                     'muscle_id'           => $muscles[$muscles_config[$id]], #
                     'place'               => $places[$places_config[$id]],
                     'ar' => [
