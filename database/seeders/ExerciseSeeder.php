@@ -102,50 +102,49 @@ class ExerciseSeeder extends Seeder
                     ],
                 ],
             );
-        }
+            //Images
+            $image_name = "images/$id.png";
+            $image_file = public_path($image_name);
 
-        //Images
-        $image_name = "images/$id.png";
-        $image_file = public_path($image_name);
+            //Videos
+            $video_name = "videos/$id.mp4";
+            $video_file = public_path($video_name);
 
-        //Videos
-        $video_name = "videos/$id.mp4";
-        $video_file = public_path($video_name);
-
-        if (file_exists($video_file) || file_exists($image_file)) {
-            $video_uploaded = new UploadedFile($video_file, $video_name);
-            $image_uploaded = new UploadedFile($image_file, $image_name);
-            request()->files->set('image', $image_uploaded);
-            request()->files->set('video', $video_uploaded);
-            $image = request()->file('image');
-            $video = request()->file('video');
-        }
+            if (file_exists($video_file) || file_exists($image_file)) {
+                $video_uploaded = new UploadedFile($video_file, $video_name);
+                $image_uploaded = new UploadedFile($image_file, $image_name);
+                request()->files->set('image', $image_uploaded);
+                request()->files->set('video', $video_uploaded);
+                $image = request()->file('image');
+                $video = request()->file('video');
+            }
 
 
-        if (file_exists($image_file)) {
+            if (file_exists($image_file)) {
 
-            $extension_image = $image->getClientOriginalExtension();
-            $fileNameImage = uniqid() . '-' . time() . '.' . $extension_image;
-            $image_path = 'exercise/images/';
-            $image->storeAs('files/' . $image_path . $id . '/', $fileNameImage, 'public');
-            Image::make(storage_path('app/public/files/' . $image_path . $id . '/' . $fileNameImage))
-                ->save(storage_path('app/public/files/' . $image_path . $id . '/thumb-' . $fileNameImage));
+                $extension_image = $image->getClientOriginalExtension();
+                $fileNameImage = uniqid() . '-' . time() . '.' . $extension_image;
+                $image_path = 'exercise/images/';
+                $image->storeAs('files/' . $image_path . $id . '/', $fileNameImage, 'public');
+                Image::make(storage_path('app/public/files/' . $image_path . $id . '/' . $fileNameImage))
+                    ->save(storage_path('app/public/files/' . $image_path . $id . '/thumb-' . $fileNameImage));
 
-            $exercise_model->update([
-                'image' => $fileNameImage,
-            ]);
-        }
+                $exercise_model->update([
+                    'image' => $fileNameImage,
+                ]);
+            }
 
-        if (file_exists($video_file)) {
+            if (file_exists($video_file)) {
 
-            $extension_video = $video->getClientOriginalExtension();
-            $fileNameVideo = uniqid() . '-' . time() . '.' . $extension_video;
-            $video_path = 'exercise/videos/';
-            $video->storeAs('files/' . $video_path . $id . '/', $fileNameVideo, 'public');
+                $extension_video = $video->getClientOriginalExtension();
+                $fileNameVideo = uniqid() . '-' . time() . '.' . $extension_video;
+                $video_path = 'exercise/videos/';
+                $video->storeAs('files/' . $video_path . $id . '/', $fileNameVideo, 'public');
 
-            $exercise_model->update([
-                'video' => $fileNameVideo
-            ]);
+                $exercise_model->update([
+                    'video' => $fileNameVideo
+                ]);
+            }
         }
     }
 }
