@@ -1,3 +1,4 @@
+
 @extends('admin.master')
 @section('dashboard')
     <div class="page-content-wrapper">
@@ -11,76 +12,87 @@
                         </div>
                     </div>
                     <div class="col-12">
-
-                        <a class="btn btn-primary" href="{{ url('manager/exercises/create') }}"
-                            style="color: white; margin-left:89% ; background-color:#2a3f5a; border:0; border-radius: 12px;">
-                            <i class="fa fa-plus"> Add New</i>
-                        </a>
-
+                        <a class="btn btn-primary" href="{{ url('manager/exercises/create') }}" style="color: white; margin-left:89% ; background-color:#2a3f5a; border:0; border-radius: 12px;"><i
+                                class="fa fa-plus"> Add New</i></a>
                         <div class="block table-block mb-4" style="margin-top: 20px;">
                             <div class="row">
+
                                 <div class="card w-100">
                                     <div class="card-body">
-                                        @livewire('exercise-table')
+                                        <table id="table-id" class="table table-bordered table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Image</th>
+                                                <th>Title</th>
+                                                <th>Exercise Place</th>
+                                                <th>equipment</th>
+                                                <th>Level</th>
+                                                <th>Muscle</th>
+                                                <th>Exercise Category</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-
-
-{{-- @section('scripts')
+@section('scripts')
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#table-id').DataTable({
-                processing: true,
-                serverSide: true,
-                responsive: true,
-                sorting: false,
-                lengthChange: true,
-                autoWidth: false,
-                pageLength: 5,
-                searching: false,
-                dom: 'lBfrtip',
-                "ajax": '{{ url('manager/exercises/index') }}',
-                "columns": [{
-                        "data": "id"
+                processing   : true,
+                serverSide   : true,
+                responsive   : true,
+                sorting      : false,
+                lengthChange : true,
+                autoWidth    : false,
+                pageLength   : 5,
+                searching:   false,
+                dom:'lBfrtip',
+                "ajax" : '{{ url("manager/exercises/index") }}',
+                "columns" : [
+                    {
+                        "data" : "id"
                     },
                     {
-                        "data": "image",
+                        "data" : "image",
                     },
                     {
-                        "data": 'title'
+                        "data" : 'title'
                     },
                     {
-                        "data": 'place'
+                        "data" : 'place'
                     },
                     {
-                        "data": 'equipment'
+                        "data" : 'equipment'
                     },
                     {
-                        "data": 'level'
+                        "data" : 'level'
                     },
                     {
-                        "data": 'muscle'
+                        "data" : 'muscle'
                     },
                     {
-                        "data": 'exercise_category'
+                        "data" : 'exercise_category'
                     },
                     {
-                        "data": 'action'
+                        "data" : 'action'
                     }
                 ],
                 buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#table-id_wrapper .col-md-6:eq(0)');
 
-            $(document).on('click', '#delete-model', function() {
+            $(document).on('click', '#delete-model', function () {
                 Swal
                     .fire({
                         title: 'Are you sure want to delete this ?',
@@ -101,10 +113,10 @@
                             });
                             $.ajax({
                                 type: "DELETE",
-                                url: '{{ url('manager/exercises') }}/' + model_id,
+                                url: '{{ url("manager/exercises") }}/' + model_id,
                                 dataType: "json",
-                                success: function(response, textStatus, jqXHR) {
-                                    if (jqXHR.status === 200) {
+                                success : function (response, textStatus, jqXHR) {
+                                    if(jqXHR.status === 200){
                                         Swal.fire(
                                             'Deleted!',
                                             `${ jqXHR.responseJSON.message }`,
@@ -114,8 +126,8 @@
                                         })
                                     }
                                 },
-                                error: function(jqXHR) {
-                                    if (jqXHR.status === 400) {
+                                error: function(jqXHR){
+                                    if(jqXHR.status === 400){
                                         Swal.fire(
                                             'Warning!',
                                             `${ jqXHR.responseJSON.message }`,
@@ -128,5 +140,6 @@
                     })
             });
         });
+
     </script>
-@endsection --}}
+@endsection
