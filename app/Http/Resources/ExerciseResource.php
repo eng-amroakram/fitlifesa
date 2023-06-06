@@ -9,6 +9,7 @@ class ExerciseResource extends JsonResource
 {
     public function toArray($request)
     {
+        dd($this->id,$this->title);
         return [
             'id'             => $this->id,
             'title'          => $this->title,
