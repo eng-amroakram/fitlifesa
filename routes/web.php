@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Exercise;
 use App\Http\Resources\ExerciseResource;
+use Illuminate\Http\Request;
 
 Route::view('/', 'admin.login')->name('login');
 Route::prefix('manager')->name('manager.')->group(function () {
@@ -127,7 +128,9 @@ Route::prefix('manager')->name('manager.')->group(function () {
     });
 });
 
-Route::get('testing', function () {
+Route::get('testing', function (Request $request) {
+
+    dd($request->testing, $request->query('testing'));
     // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
     // DB::table('exercises')->truncate();
     // DB::table('exercise_translations')->truncate();
