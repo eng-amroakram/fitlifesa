@@ -39,7 +39,7 @@ class ExerciseController extends Controller
         {
             $exercises->where('equipment_id',\request()->query('equipment'));
         }
-        dd($exercises);
+
         return $this->sendResponse(ExerciseResource::collection($exercises->latest()->paginate($perPage))->response()->getData(true), ' ', true,200);
     }
 
