@@ -28,7 +28,8 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
-
+use App\Models\Exercise;
+use App\Http\Resources\ExerciseResource;
 
 Route::view('/', 'admin.login')->name('login');
 Route::prefix('manager')->name('manager.')->group(function () {
@@ -131,5 +132,6 @@ Route::get('testing', function () {
     // DB::table('exercises')->truncate();
     // DB::table('exercise_translations')->truncate();
     // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-    return view('admin.Exercise.index-test');
+    // return view('admin.Exercise.index-test');
+
 });
