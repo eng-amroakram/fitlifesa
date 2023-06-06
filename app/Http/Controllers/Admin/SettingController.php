@@ -14,10 +14,10 @@ class SettingController extends Controller
     use Photoable;
     public function index()
     {
-        $settingEn = SettingTranslation::where('locale','en')->first();
-        $settingAr = SettingTranslation::where('locale','ar')->first();
+        $settingEn = SettingTranslation::where('locale', 'en')->first();
+        $settingAr = SettingTranslation::where('locale', 'ar')->first();
         $setting = Setting::first();
-        return view('admin.settings.edit',compact('settingEn','settingAr', 'setting'));
+        return view('admin.settings.edit', compact('settingEn', 'settingAr', 'setting'));
     }
     public function update(Request $request, Setting $setting)
     {
@@ -28,18 +28,18 @@ class SettingController extends Controller
             'intro_video'    => 'sometimes|nullable|mimes:mp4|max:20000',
         ]);
 
-        if($request->hasFile('intro_video') &&
-            ($setting->intro_video != null && Storage::disk('public')->exists('files/settings/videos/'.$setting->id)))
-        {
-            $this->deleteFile($setting->intro_video,$setting->id, 'settings/videos/');
+        if (
+            $request->hasFile('intro_video') &&
+            ($setting->intro_video != null && Storage::disk('public')->exists('files/settings/videos/' . $setting->id))
+        ) {
+            $this->deleteFile($setting->intro_video, $setting->id, 'settings/videos/');
             $file = $request->file('intro_video');
             $fileName = $this->uploadFile($file, $setting->id, 'settings/videos/');
             $setting->update([
                 'intro_video' => $fileName
             ]);
         }
-        if($request->hasFile('intro_video') && ($setting->intro_video == null))
-        {
+        if ($request->hasFile('intro_video') && ($setting->intro_video == null)) {
             $file = $request->file('intro_video');
             $fileName = $this->uploadFile($file, $setting->id, 'settings/videos/');
             $setting->update([
@@ -61,7 +61,7 @@ class SettingController extends Controller
             'mobile'     => $request->mobile,
             'site_url'     => $request->site_url,
         ]);
-        $notification = array('message' => "Setting Updated Successfully!",'alert-type' => 'info');
+        $notification = array('message' => "Setting Updated Successfully!", 'alert-type' => 'info');
         return redirect()->back()->with($notification);
     }
 }
