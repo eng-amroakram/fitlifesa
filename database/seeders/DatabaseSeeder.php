@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(QuestionSeeder::class);
         $this->call(AnswerSeeder::class);
         $this->call(FoodTypeSeeder::class);
-        //        $this->call(MeasurementUnitSeeder::class);
+        $this->call(MeasurementUnitSeeder::class);
         $this->call(BodyPartSeeder::class);
         $this->call(WorkoutTypeSeeder::class);
         $this->call(PlanDurationSeeder::class);
@@ -31,11 +31,11 @@ class DatabaseSeeder extends Seeder
         $this->call(ExerciseSeeder::class);
         $this->call(DaySeeder::class);
         $this->call(GoalSeeder::class);
-        //        $this->call(CategorySeeder::class);
-        //        $this->call(FoodExchangeSeeder::class);
+        // $this->call(CategorySeeder::class);
+        $this->call(FoodExchangeSeeder::class);
         //        $this->call(MealSeeder::class);
         //        $this->call(UserServingSeeder::class);
-        //        $this->call(FoodExchangeMeasurementSeeder::class);
+        $this->call(FoodExchangeMeasurementSeeder::class);
         $this->call(PlanManagementSeeder::class);
         //        $this->call(MealTypeSeeder::class);
     }

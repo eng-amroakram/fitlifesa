@@ -25,6 +25,7 @@ class CategorySeeder extends Seeder
                 ],
                 'category_type_id'  => 1
             ],
+
             [
                 'id'    => 2,
                 'ar' => [
@@ -34,7 +35,9 @@ class CategorySeeder extends Seeder
                     'title'   => "Test 2"
                 ],
                 'category_type_id'  => 2
-            ], [
+            ],
+
+            [
                 'id'    => 3,
                 'ar' => [
                     'title'   => "تيست 3"
@@ -44,9 +47,12 @@ class CategorySeeder extends Seeder
                 ],
                 'category_type_id'  => 3
             ]
+
         ];
+
         foreach($types as $type){
             Category::create($type);
         }
+
     }
 }

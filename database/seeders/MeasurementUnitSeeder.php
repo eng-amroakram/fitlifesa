@@ -14,60 +14,20 @@ class MeasurementUnitSeeder extends Seeder
      */
     public function run()
     {
-        $types = [
-            [
-                'id'    => 1,
-                'ar' => [
-                    'name'   => "كوب"
-                ],
-                'en' => [
-                    'name'   => "cup"
-                ],
-            ],[
-                'id'    => 2,
-                'ar' => [
-                    'name'   => "نصف لتر"
-                ],
-                'en' => [
-                    'name'   => "pint"
-                ],
-            ],[
-                'id'    => 3,
-                'ar' => [
-                    'name'   => "ربع غالون"
-                ],
-                'en' => [
-                    'name'   => "quart"
-                ],
-            ],[
-                'id'    => 4,
-                'ar' => [
-                    'name'   => "جرام"
-                ],
-                'en' => [
-                    'name'   => "gram"
-                ],
-            ],[
-                'id'    => 5,
-                'ar' => [
-                    'name'   => "مليلتر"
-                ],
-                'en' => [
-                    'name'   => "milliliter"
-                ],
-            ],[
-                'id'    => 6,
-                'ar' => [
-                    'name'   => "لتر"
-                ],
-                'en' => [
-                    'name'   => "liter"
-                ],
-            ],
+        $types = config('measurement-units.measurement-units');
 
-        ];
-        foreach($types as $type){
-            MeasurementUnit::create($type);
+        foreach ($types as $id => $type) {
+            MeasurementUnit::create(
+                [
+                    'id'    => $id,
+                    'ar' => [
+                        'name'   => $type['ar']
+                    ],
+                    'en' => [
+                        'name'   => $type['en']
+                    ],
+                ]
+            );
         }
     }
 }
