@@ -18,7 +18,7 @@ class ExerciseController extends Controller
 
     public function index()
     {
-        dd(56789);
+
         $perPage = \request()->query('per_page') ?? 10;
         $exercises = Exercise::query()
             ->with(['muscle','level']);
@@ -39,7 +39,7 @@ class ExerciseController extends Controller
         {
             $exercises->where('equipment_id',\request()->query('equipment'));
         }
-
+        dd($exercises);
         return $this->sendResponse(ExerciseResource::collection($exercises->latest()->paginate($perPage))->response()->getData(true), ' ', true,200);
     }
 
