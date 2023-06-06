@@ -23,13 +23,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\WorkoutController;
-use App\Http\Controllers\SeedExerciseController;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-
-use App\Models\Exercise;
-use App\Http\Resources\ExerciseResource;
 use Illuminate\Http\Request;
 
 Route::view('/', 'admin.login')->name('login');

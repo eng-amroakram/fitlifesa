@@ -22,7 +22,6 @@ use App\Http\Controllers\API\UserExercisePlanController;
 use App\Http\Controllers\API\WaterTrackerController;
 use App\Http\Controllers\API\WeightTrackerController;
 use App\Http\Controllers\SMS\SMSController;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 

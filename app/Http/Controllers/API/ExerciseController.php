@@ -19,7 +19,7 @@ class ExerciseController extends Controller
     public function index()
     {
         $perPage = \request()->query('per_page') ?? 10;
-        dd($perPage, request()->query('per_page'),request()->per_page);
+
         $exercises = Exercise::query()
             ->with(['muscle','level']);
 
