@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\BodyPart;
 use App\Models\Exercise;
 use Illuminate\Database\Seeder;
+use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
@@ -103,6 +104,10 @@ class ExerciseSeeder extends Seeder
                     ],
                 ],
             );
+
+            // New Request Instance
+            $request = new Request();
+
             //Images
             $image_name = "images/$id.png";
             $image_file = public_path($image_name);
@@ -119,10 +124,10 @@ class ExerciseSeeder extends Seeder
             if (file_exists($video_file) || file_exists($image_file)) {
                 $video_uploaded = new UploadedFile($video_file, $video_name);
                 $image_uploaded = new UploadedFile($image_file, $image_name);
-                request()->files->set('image', $image_uploaded);
-                request()->files->set('video', $video_uploaded);
-                $image = request()->file('image');
-                $video = request()->file('video');
+                $request->files->set('image', $image_uploaded);
+                $request->files->set('video', $video_uploaded);
+                $image = $request->file('image');
+                $video = $request->file('video');
             }
 
             if (file_exists($image_file)) {
