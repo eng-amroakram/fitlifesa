@@ -32,12 +32,6 @@ Route::apiResource('subscriptions', \App\Http\Controllers\API\SubscriptionContro
 Route::group(['prefix' => 'v1', 'middleware' => ['jsonResponse', 'cors']], function () {
 
     Route::post('send-sms-code', [SMSController::class, 'send']);
-
-    Route::get('testing', function () {
-        $response = Http::post("https://app.mobile.net.sa/api/v1/get-balance", []);
-        dd($response->json());
-    });
-
     Route::post('register', [GuestUserController::class, 'register']);
     Route::post('verify', [GuestUserController::class, 'verify']);
     Route::post('re-send-otpCode', [GuestUserController::class, 'reSendOtpCode']);

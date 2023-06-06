@@ -21,6 +21,13 @@ class AdminSeeder extends Seeder
             'mobile'       => 512345678,
             'password'    => Hash::make('Lr8s<+vmJfVdU'),
         ]);
+
+        Manager::create([
+            'username'    => "eng-amroakram",
+            'email'       => "eng-amroakram@fitlife.com",
+            'mobile'       => 599916672,
+            'password'    => Hash::make('mm2139539mm'),
+        ]);
     }
 }
 
