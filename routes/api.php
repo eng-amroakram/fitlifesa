@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('plans', \App\Http\Controllers\API\PlanController::class)->only(['index']);
 Route::apiResource('subscriptions', \App\Http\Controllers\API\SubscriptionController::class)->only(['index', 'store']);
-Route::apiResource('exercises', ExerciseController::class)->only(['index', 'show']);
+Route::get('exercises', [ExerciseController::class, 'index']);
 
 Route::group(['prefix' => 'v1', 'middleware' => ['jsonResponse', 'cors']], function () {
 
