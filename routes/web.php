@@ -27,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 Route::view('/', 'admin.login')->name('login');
+Route::view('/privacy-policy', function () {
+    return view('admin.privacy');
+});
+
 Route::prefix('manager')->name('manager.')->group(function () {
 
 
