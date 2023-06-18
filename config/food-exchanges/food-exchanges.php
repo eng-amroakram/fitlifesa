@@ -1376,5 +1376,7 @@ return [
         "food_type_id" => 2,
         "en" => "Pineapple - Fresh",
         "ar" => "اناناس - طازة",
+
     ],
+
 ];

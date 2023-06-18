@@ -20,6 +20,11 @@ class ExerciseSeeder extends Seeder
     public function run()
     {
 
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('exercises')->truncate();
+        DB::table('exercise_translations')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         $bodyPart = BodyPart::get();
         $places = ["GYM" => 1, "Home" => 2];
 
@@ -84,76 +89,79 @@ class ExerciseSeeder extends Seeder
 
         foreach ($names as $id => $name) {
 
-            $exercise_model = Exercise::create(
-                [
-                    'id'                  => $id,
-                    'equipment_id'        => $equipments[$equipments_config[$id]], #
-                    'level_id'            => 1, #
-                    'exercise_category'   => 2,
-                    'muscle_id'           => $muscles[$muscles_config[$id]], #
-                    'place'               => $places[$places_config[$id]],
-                    'ar' => [
-                        'title'           => $name,
-                        'tips'            => " ",
-                        "instructions"    => $descriptions[$id]['ar'],
+            if (!in_array($id, [117, 92, 88])) {
+
+                $exercise_model = Exercise::create(
+                    [
+                        'id'                  => $id,
+                        'equipment_id'        => $equipments[$equipments_config[$id]], #
+                        'level_id'            => 1, #
+                        'exercise_category'   => 2,
+                        'muscle_id'           => $muscles[$muscles_config[$id]], #
+                        'place'               => $places[$places_config[$id]],
+                        'ar' => [
+                            'title'           => $name,
+                            'tips'            => " ",
+                            "instructions"    => $descriptions[$id]['ar'],
+                        ],
+                        'en' => [
+                            'title'           => $name,
+                            'tips'            => " ",
+                            "instructions"    => $descriptions[$id]['en'],
+                        ],
                     ],
-                    'en' => [
-                        'title'           => $name,
-                        'tips'            => " ",
-                        "instructions"    => $descriptions[$id]['en'],
-                    ],
-                ],
-            );
+                );
 
-            // New Request Instance
-            $request = new Request();
+                // New Request Instance
+                $request = new Request();
 
-            //Images
-            $image_name = "images/$id.png";
-            $image_file = public_path($image_name);
-
-            if (!file_exists($image_file)) {
-                $image_name = "images/$id.PNG";
+                //Images
+                $image_name = "images/$id.png";
                 $image_file = public_path($image_name);
-            }
 
-            //Videos
-            $video_name = "videos/$id.mp4";
-            $video_file = public_path($video_name);
+                if (!file_exists($image_file)) {
+                    $image_name = "images/$id.PNG";
+                    $image_file = public_path($image_name);
+                }
 
-            if (file_exists($video_file) || file_exists($image_file)) {
-                $video_uploaded = new UploadedFile($video_file, $video_name);
-                $image_uploaded = new UploadedFile($image_file, $image_name);
-                $request->files->set('image', $image_uploaded);
-                $request->files->set('video', $video_uploaded);
-                $image = $request->file('image');
-                $video = $request->file('video');
-            }
+                //Videos
+                $video_name = "videos/$id.mp4";
+                $video_file = public_path($video_name);
 
-            if (file_exists($image_file)) {
+                if (file_exists($video_file) || file_exists($image_file)) {
+                    $video_uploaded = new UploadedFile($video_file, $video_name);
+                    $image_uploaded = new UploadedFile($image_file, $image_name);
+                    $request->files->set('image', $image_uploaded);
+                    $request->files->set('video', $video_uploaded);
+                    $image = $request->file('image');
+                    $video = $request->file('video');
+                }
 
-                $extension_image = $image->getClientOriginalExtension();
-                $fileNameImage = uniqid() . '-' . time() . '.' . $extension_image;
-                $image_path = 'exercise/images/';
-                $image->storeAs('files/' . $image_path . $id . '/', $fileNameImage, 'public');
-                Image::make(storage_path('app/public/files/' . $image_path . $id . '/' . $fileNameImage))
-                    ->save(storage_path('app/public/files/' . $image_path . $id . '/thumb-' . $fileNameImage));
+                if (file_exists($image_file)) {
 
-                $exercise_model->update([
-                    'image' => $fileNameImage,
-                ]);
-            }
+                    $extension_image = $image->getClientOriginalExtension();
+                    $fileNameImage = uniqid() . '-' . time() . '.' . $extension_image;
+                    $image_path = 'exercise/images/';
+                    $image->storeAs('files/' . $image_path . $id . '/', $fileNameImage, 'public');
+                    Image::make(storage_path('app/public/files/' . $image_path . $id . '/' . $fileNameImage))
+                        ->save(storage_path('app/public/files/' . $image_path . $id . '/thumb-' . $fileNameImage));
 
-            if (file_exists($video_file)) {
+                    $exercise_model->update([
+                        'image' => $fileNameImage,
+                    ]);
+                }
 
-                $extension_video = $video->getClientOriginalExtension();
-                $fileNameVideo = uniqid() . '-' . time() . '.' . $extension_video;
-                $video_path = 'exercise/videos/';
-                $video->storeAs('files/' . $video_path . $id . '/', $fileNameVideo, 'public');
+                if (file_exists($video_file)) {
 
-                $exercise_model->update([
-                    'video' => $fileNameVideo
-                ]);
+                    $extension_video = $video->getClientOriginalExtension();
+                    $fileNameVideo = uniqid() . '-' . time() . '.' . $extension_video;
+                    $video_path = 'exercise/videos/';
+                    $video->storeAs('files/' . $video_path . $id . '/', $fileNameVideo, 'public');
+
+                    $exercise_model->update([
+                        'video' => $fileNameVideo
+                    ]);
+                }
             }
         }
     }

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     1 =>     ["food_exchange_id" => 2,     "measurement_unit_id" => 1, "quantity" => 1],
     2 =>     ["food_exchange_id" => 4,     "measurement_unit_id" => 1, "quantity" => 1],
     3 =>     ["food_exchange_id" => 3,     "measurement_unit_id" => 1, "quantity" => 1],
