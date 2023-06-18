@@ -32,6 +32,7 @@ class Subscription extends Model
     public function plan() : BelongsTo
     {
         return $this->belongsTo(PlanManagement::class, 'plan_management_id');
+        //Hello World
     }
 
     public function user() : BelongsTo
