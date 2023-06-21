@@ -26,10 +26,20 @@ use App\Http\Controllers\Admin\WorkoutController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-Route::view('/', 'admin.login')->name('login');
+Route::view('/login', 'admin.login')->name('login');
+
+
+Route::get('/', function () {
+    return view('web.index');
+})->name('web.index');
+
 Route::get('/privacy', function () {
-    return view('admin.privacy');
-});
+    return view('web.privacy');
+})->name('web.privacy');
+
+Route::post('/contact-us', function () {
+    return redirect()->back()->with('success', 'Your message has been sent successfully.');
+})->name('web.contact-us');
 
 Route::prefix('manager')->name('manager.')->group(function () {
 
