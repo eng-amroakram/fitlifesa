@@ -67,7 +67,7 @@
                         personal information when you use our website and services.
                     </p>
                     <p>
-                        <strong>1. Information We Collect</strong>
+                        <strong class="text-white">1. Information We Collect</strong>
                         <br />
                         We may collect personal information from you, including your
                         name, email address, and demographic information. This
@@ -75,7 +75,7 @@
                         through our contact forms or when you register for an account.
                     </p>
                     <p>
-                        <strong>2. Use of Your Information</strong>
+                        <strong class="text-white">2. Use of Your Information</strong>
                         <br />
                         We may use the personal information we collect to improve our
                         services, provide customer support, and send you promotional
@@ -83,7 +83,7 @@
                         information with third parties without your consent.
                     </p>
                     <p>
-                        <strong>3. Security Measures</strong>
+                        <strong class="text-white">3. Security Measures</strong>
                         <br />
                         We take reasonable precautions to protect your personal
                         information from unauthorized access, use, or disclosure.
@@ -92,7 +92,7 @@
                         absolute security of your information.
                     </p>
                     <p>
-                        <strong>4. Cookies</strong>
+                        <strong class="text-white">4. Cookies</strong>
                         <br />
                         Our website uses cookies to enhance your browsing experience.
                         These cookies may collect information such as your IP address,
@@ -101,7 +101,7 @@
                         your device.
                     </p>
                     <p>
-                        <strong>5. Third-Party Links</strong>
+                        <strong class="text-white">5. Third-Party Links</strong>
                         <br />
                         Our website may contain links to third-party websites. We are
                         not responsible for the privacy practices or content of those
@@ -109,7 +109,7 @@
                         third-party sites you visit.
                     </p>
                     <p>
-                        <strong>6. Changes to This Policy</strong>
+                        <strong class="text-white">6. Changes to This Policy</strong>
                         <br />
                         We reserve the right to update or modify this Privacy Policy at
                         any time. Any changes will be posted on this page, and the
