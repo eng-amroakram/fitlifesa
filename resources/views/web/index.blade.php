@@ -1,19 +1,27 @@
 @extends('partials.layout')
 @section('content')
-    <section class="hero-wrap" id="home" style="background-image: url('{{ asset('web/images/bg_1.jpg') }}');">
+    <section class="hero-wrap" id="home" style="background-image: url('{{ asset('web/images/header_2.jpg') }}');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center">
                 <div class="col-lg-6">
 
-                    <span class="subheading">Transform Your Life with Wellness and Vitality</span>
-                    <h1 class="mb-4">Fuel Your Body, <br>Elevate Your Fitness &amp; Embrace Self-Love</h1>
+                    <span class="subheading">YOUR LIFE, YOUR BODY, YOUR HEALTH</span>
+
+                    <h2 class="mb-4 text-white">
+                        Achieve your body goals with FitLife’s fitness programs built in accordance
+                        with your convenience
+                    </h2>
 
                     <p>
                         <a href="{{ route('web.index') }}#contact" class="btn btn-primary p-4 py-3">Contact us
                             <span class="ion-ios-arrow-round-forward"></span></a>
-                        <!-- <a href="#" class="btn btn-white p-4 py-3">Learn More
-                                                                                    <span class="ion-ios-arrow-round-forward"></span></a> -->
+
+                        <!--
+                                <a href="#" class="btn btn-white p-4 py-3">
+                                    Learn More
+                                <span class="ion-ios-arrow-round-forward"></span></a>
+                            -->
                     </p>
                 </div>
             </div>
@@ -25,33 +33,43 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row g-lg-1">
+
                         <div class="col-md d-flex align-items-stretch">
-                            <div class="services text-center">
+                            <div class="services text-center" style="color: white;">
                                 <div class="icon"><span class="flaticon-plan"></span></div>
                                 <div class="text">
-                                    <h2>Nutrition Strategies</h2>
-                                    <p>Discover effective nutrition strategies to fuel your body and optimize your health.
+                                    <h2 style="color: white;">FitLife Nutrition</h2>
+                                    <p>
+                                        FitLife offers the most accurate nutrition plan built especially for your goal
+                                        through machine learning algorithms using the food exchange method.
                                     </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-md d-flex align-items-stretch">
-                            <div class="services text-center">
+                            <div class="services text-center" style="color: white;">
                                 <div class="icon"><span class="flaticon-dumbbell"></span></div>
                                 <div class="text">
-                                    <h2>Workout Routines</h2>
-                                    <p>Unlock your full potential with personalized workout routines designed to challenge
-                                        and transform your body.</p>
+                                    <h2 style="color: white;">FitLife Workout</h2>
+
+                                    <p>
+                                        FitLife builds a comprehensive exercise plan that fits your body goal and daily
+                                        routine conveniently and accurately, whether at home or the gym.
+                                    </p>
+
                                 </div>
                             </div>
                         </div>
                         <div class="col-md d-flex align-items-stretch">
-                            <div class="services text-center">
+                            <div class="services text-center" style="color: white;">
                                 <div class="icon"><span class="flaticon-team-support"></span></div>
                                 <div class="text">
-                                    <h2>Support Motivation</h2>
-                                    <p>Experience unwavering support and motivation from a vibrant community, inspiring you
-                                        to push past your limits.</p>
+                                    <h2 style="color: white;">Exercise Library</h2>
+                                    <p>
+                                        FitLife offers a complete exercise library with 400+ exercises supported by
+                                        instructions and videos for demonstration for all body muscles.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +85,7 @@
                 <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <div class="img w-100 section-counter"
-                        style="background-image: url('{{ asset('web/images/about.jpg') }}');">
+                        style="background-image: url('{{ asset('web/images/body_2.jpg') }}');">
                         <div class="counter-wrap d-flex">
                             <div class="icon"><span class="flaticon-diet"></span></div>
                             <div class="text ps-3">
@@ -80,20 +98,21 @@
                 <div class="col-md-6 heading-section d-flex align-items-center" data-aos="fade-up" data-aos-delay="200"
                     data-aos-duration="1000">
                     <div class="mt-5 mt-md-0">
-                        <span class="subheading">About Fit Life Company</span>
+                        <span class="subheading">About FitLife:</span>
                         <p>
-                            Fit Life empowers individuals to take control of their health and fitness with our personalized
-                            mobile app. Utilizing machine learning algorithms, we create customized diet and exercise plans
-                            based on your unique needs and goals.
+                            FitLife is an app developed to make your fitness journey much easier and more convenient. Our
+                            algorithms were developed to produce accurate programs with a full range of workouts and recipes
+                            designed to fit your daily schedule and preferences.
                         </p>
                         <p>
-                            Track your progress, receive actionable insights, and access a library of healthy recipes and
-                            workout videos. Our user-friendly app is available on iOS and Android, making it convenient for
-                            everyone.
+                            The FitLife team consists of certified fitness professionals and nutritionists who have
+                            developed special programs that cater to everyone's specific needs, regardless of their fitness
+                            level, schedule, or preferred workout location.
                         </p>
                         <p>
-                            Join our community of like-minded individuals and achieve your health and fitness goals with our
-                            support. Let us provide you with the tools and guidance to live a healthier, happier life.
+                            At FitLife, we aim to guide your lifestyle towards a healthier, more efficient, and more
+                            motivated path, where you can take your body to the next level with flexibility, easy
+                            monitoring, and progress tracking.
                         </p>
                     </div>
                 </div>
@@ -106,7 +125,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
                     <span class="subheading">Procedure</span>
-                    <h2 class="mb-4">How It Works?</h2>
+                    <h2 class="mb-4 text-white">How It Works?</h2>
                 </div>
             </div>
             <div class="row">
@@ -117,14 +136,14 @@
                             <div class="num"><span>1</span></div>
                         </div>
                         <div class="text">
-                            <h2>Download App</h2>
+                            <h2 class="text-white">Download App</h2>
                             <p class="mb-4">Experience the power of our app by downloading it from the App Store or Google
                                 Play.</p>
                             <p>
                                 <a target="_blank" href="https://google.com" class="btn-custom">
                                     <img src="{{ asset('web/images/app-store.png') }}" width="20" height="20"
                                         alt="">
-                                    IOS Store</a>
+                                    App Store</a>
 
                                 <a target="_blank" href="https://google.com" class="btn-custom">
                                     <img src="{{ asset('web/images/google-play.png') }}" width="20" height="20"
@@ -142,7 +161,7 @@
                             <div class="num"><span>2</span></div>
                         </div>
                         <div class="text">
-                            <h2>Register & Login</h2>
+                            <h2 class="text-white">Register & Login</h2>
                             <p class="mb-4">Get started on your fitness journey by easily registering and logging in to
                                 our app.</p>
                             <p>
@@ -158,7 +177,7 @@
                             <div class="num"><span>3</span></div>
                         </div>
                         <div class="text">
-                            <h2>Feeding Schedule</h2>
+                            <h2 class="text-white">Feeding Schedule</h2>
                             <p class="mb-4">Create a customized meal schedule that aligns with your unique dietary needs
                                 and preferences.</p>
                             <p>
@@ -174,7 +193,7 @@
                             <div class="num"><span>4</span></div>
                         </div>
                         <div class="text">
-                            <h2>Customized Workout Plan</h2>
+                            <h2 class="text-white">Customized Workout Plan</h2>
                             <p class="mb-4">Design a personalized workout plan tailored to your fitness goals and skill
                                 level.</p>
                             <p>
@@ -193,7 +212,7 @@
                 <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <div class="img w-100 section-counter"
-                        style="background-image: url('{{ asset('web/images/about.jpg') }}');">
+                        style="background-image: url('{{ asset('web/images/body_1.jpg') }}');">
                         <div class="counter-wrap d-flex">
                             <div class="icon"><span class="flaticon-diet"></span></div>
                             <div class="text ps-3">
@@ -208,27 +227,52 @@
                     data-aos-duration="1000">
                     <div class="mt-5 mt-md-0">
 
-                        <span class="subheading">Our Vision</span>
+                        <span class="subheading">Our Vision:</span>
 
-                        <p>At Fit Life, our vision is to empower individuals to seize control of their health and fitness
-                            journey.</p>
-                        <p>By harnessing the cutting-edge potential of machine learning technology, we provide a
-                            personalized and accessible platform.</p>
-                        <p>Our goal is to create tailored diet and exercise plans that fit seamlessly into your lifestyle.
+                        <p>
+                            At FitLife, our vision is to become the most reliable source of fitness and health by providing
+                            the most useful health tips and instilling healthy habits, thus contributing to the creation of
+                            a healthier society.
                         </p>
 
-                        <span class="subheading">Our Mission</span>
+                        <p>
+                            In alignment with Vision 2030, we envision a society where people of all age ranges have easy
+                            and flexible access to reliable health and fitness services.
+                        </p>
 
-                        <p>At Fit Life, our mission is to revolutionize the health and fitness industry through our
-                            innovative mobile application.</p>
-                        <p>By harnessing the power of machine learning algorithms, we provide personalized diet and exercise
-                            plans that are tailored to your unique needs and goals.</p>
-                        <p>We strive to educate and empower individuals, equipping them with the knowledge to make informed
-                            decisions about their health and fitness journey.</p>
-                        <p>Through actionable insights, progress tracking, and a supportive community, we are dedicated to
-                            helping you achieve your desired outcomes.</p>
-                        <p>Our commitment lies in delivering an exceptional user experience that inspires and motivates you
-                            to live your healthiest and happiest life.</p>
+                        <p>
+                            FitLife aims to become the most accurate health service provider, pushing individuals to reach
+                            their fullest potential, whether they are beginners or experienced individuals in health and
+                            fitness.
+                        </p>
+
+                        <span class="subheading">Our Mission:</span>
+
+                        <p>
+                            FitLife's mission is to simplify your journey towards a healthier lifestyle through an
+                            all-user-friendly app that includes a wide range of health and fitness services. We offer
+                            professional exercise and nutrition programs designed for your body type and goals, eliminating
+                            the need for expensive gym coach subscriptions.
+                        </p>
+
+                        <p>
+                            FitLife strives to fully harness the power of machine learning, maximizing its potential to
+                            deliver the most accurate results and meet the highest standards, all at the lowest subscription
+                            costs possible.
+                        </p>
+
+                        <p>
+                            Our objective at FitLife is to foster growth and revolutionize the way people perceive health
+                            and fitness. We aim to educate and simplify the path to becoming the best version of yourself.
+                        </p>
+
+                        <p>
+                            The FitLife team understands that the journey to reach your full potential comes with
+                            challenges.
+                            We address these obstacles through continuous innovation and the expansion of our services,
+                            ensuring ease and flexibility every step of the way.
+                        </p>
+
                     </div>
                 </div>
             </div>

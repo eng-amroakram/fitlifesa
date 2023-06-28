@@ -8,4 +8,4 @@
     @include('partials.styles')
 </head>
 
-<body>
+<body style="background:#1a1a1a; ">
