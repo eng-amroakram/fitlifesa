@@ -60,7 +60,7 @@
                 <div class="mt-md-0">
 
                     <span class="subheading fs-3">Privacy Policy</span>
-                    <h3>About Your Privacy</h3>
+                    <h3 class="text-white">About Your Privacy</h3>
                     <p>
                         At Fit Life, we are committed to protecting your privacy. This
                         Privacy Policy outlines how we collect, use, and safeguard your
