@@ -115,7 +115,7 @@
                         any time. Any changes will be posted on this page, and the
                         revised version will be effective immediately.
                     </p>
-                    <h4>
+                    <h4 class="text-white">
                         <strong>
                             If you have any questions or concerns about our Privacy Policy,
                             please contact us.
