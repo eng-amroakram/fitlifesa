@@ -1,6 +1,6 @@
 @extends('partials.layout')
 @section('content')
-    <section class="hero-wrap" id="home" style="background-image: url('{{ asset('web/images/header_2.jpg') }}');">
+    <section class="hero-wrap" id="home" style="background-image: url('{{ asset('web/images/header_1.JPG') }}');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center">
@@ -18,10 +18,10 @@
                             <span class="ion-ios-arrow-round-forward"></span></a>
 
                         <!--
-                                <a href="#" class="btn btn-white p-4 py-3">
-                                    Learn More
-                                <span class="ion-ios-arrow-round-forward"></span></a>
-                            -->
+                                    <a href="#" class="btn btn-white p-4 py-3">
+                                        Learn More
+                                    <span class="ion-ios-arrow-round-forward"></span></a>
+                                -->
                     </p>
                 </div>
             </div>
@@ -86,13 +86,7 @@
                     data-aos-duration="1000">
                     <div class="img w-100 section-counter"
                         style="background-image: url('{{ asset('web/images/body_2.jpg') }}');">
-                        <div class="counter-wrap d-flex">
-                            <div class="icon"><span class="flaticon-diet"></span></div>
-                            <div class="text ps-3">
-                                <span class="number"><span class="countup">24</span></span>
-                                <span class="caption">Years of experienced</span>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-6 heading-section d-flex align-items-center" data-aos="fade-up" data-aos-delay="200"
@@ -213,13 +207,6 @@
                     data-aos-duration="1000">
                     <div class="img w-100 section-counter"
                         style="background-image: url('{{ asset('web/images/body_1.jpg') }}');">
-                        <div class="counter-wrap d-flex">
-                            <div class="icon"><span class="flaticon-diet"></span></div>
-                            <div class="text ps-3">
-                                <span class="number"><span class="countup">24</span></span>
-                                <span class="caption">Years of experienced</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -338,7 +325,7 @@
                         data-aos-duration="1000" data-aos-delay="200">
                         @csrf
                         <span class="subheading">Drop A Message</span>
-                        <h2 class="mb-4 appointment-head">Make An Appointment</h2>
+                        <h2 class="mb-4  appointment-head ">Make An Appointment</h2>
                         <div class="row">
                             <div class="col-md-12 col-lg-6">
                                 <div class="form-group">
