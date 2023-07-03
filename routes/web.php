@@ -37,6 +37,10 @@ Route::get('/privacy', function () {
     return view('web.privacy');
 })->name('web.privacy');
 
+Route::get('/resources', function () {
+    return view('web.resources');
+})->name('web.resources');
+
 Route::post('/contact-us', function () {
     return redirect()->back()->with('success', 'Your message has been sent successfully.');
 })->name('web.contact-us');

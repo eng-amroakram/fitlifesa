@@ -40,6 +40,12 @@
                                         Privacy Policy
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('web.resources') }}">
+                                        <span class="fa fa-chevron-right me-2"></span>
+                                        Resources
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>

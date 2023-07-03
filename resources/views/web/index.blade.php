@@ -18,10 +18,10 @@
                             <span class="ion-ios-arrow-round-forward"></span></a>
 
                         <!--
-                                    <a href="#" class="btn btn-white p-4 py-3">
-                                        Learn More
-                                    <span class="ion-ios-arrow-round-forward"></span></a>
-                                -->
+                                        <a href="#" class="btn btn-white p-4 py-3">
+                                            Learn More
+                                        <span class="ion-ios-arrow-round-forward"></span></a>
+                                    -->
                     </p>
                 </div>
             </div>
